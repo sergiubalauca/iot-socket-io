@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
     socket.on('set-name', (name) => {
         // socket.id = name;
         console.log('SET NAME: ', name);
-        io.emit('users-changed', { user: name, event: 'joined' });
+        io.emit('users-changed', { user: socket.id, event: 'joined' });
     });
 
     socket.on('send-message', (msg) => {
