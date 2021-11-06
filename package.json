@@ -16,6 +16,7 @@
   "engines": {
     "node": "16.13.0"
   },
+  "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
   "dependencies": {
     "@types/socket.io": "^3.0.2",
     "cors": "^2.8.5",
