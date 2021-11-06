@@ -4,10 +4,10 @@ import http from 'http';
 import { Server } from 'socket.io';
 
 const app: Application = express();
-const cors = require('cors');
+import cors from 'cors';
 
 app.use(cors());
-app.options('*', cors());
+app.options('*', cors);
 
 const server = http.createServer(app);
 const PORT = process.env.PORT || 8000;
