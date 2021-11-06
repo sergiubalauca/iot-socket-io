@@ -4,9 +4,11 @@ import http from 'http';
 import { Server } from 'socket.io';
 
 const app: Application = express();
-import cors from 'cors';
+const cors = require('cors');
+
 app.use(cors());
-app.options('*', cors);
+app.options('*', cors());
+
 const server = http.createServer(app);
 const PORT = process.env.PORT || 8000;
 const io = new Server(server, {
