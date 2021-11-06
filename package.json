@@ -5,8 +5,7 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "node ./server.ts",
-    "start-ts": "ts-node ./server.ts",
+    "start": "ts-node ./server.ts",
     "start:dev": "nodemon ./server.ts"
   },
   "dependencies": {
