@@ -4,9 +4,17 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "start": "node --loader ts-node/esm ./server.ts",
+    "start": "node dist/server.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/server.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master",
+    "start1": "node --loader ts-node/esm ./server.ts",
     "start2": "ts-node ./server.ts",
     "start:dev": "nodemon ./server.ts"
+  },
+  "engines": {
+    "node": "16.13.0"
   },
   "dependencies": {
     "@types/socket.io": "^3.0.2",
