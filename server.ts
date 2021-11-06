@@ -36,13 +36,13 @@ io.on('connection', (socket) => {
     // };
 
     socket.on('set-name', (name) => {
-        // socket.id = name;
+        socket.data['name'] = name;
         console.log('SET NAME: ', name);
-        io.emit('users-changed', { user: socket.id, event: 'joined' });
+        io.emit('users-changed', { user: socket.data['name'], event: 'joined' });
     });
 
     socket.on('send-message', (msg) => {
-        io.emit('message', { msg: msg.text, user: socket.id, createdAt: new Date() });
+        io.emit('message', { msg: msg.text, user: socket.data['name'], createdAt: new Date() });
     });
 
     // socket.broadcast.emit('hi');
