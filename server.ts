@@ -49,7 +49,8 @@ io.on('connection', (socket) => {
 });
 
 server.listen(PORT, (): void => {
-    console.log(`Server Running here 👉 https://localhost:${PORT}`);
+    const host = JSON.stringify(server.address());
+    console.log(`Server Running here 👉 ${host}`);
 });
 
 module.exports = app;
