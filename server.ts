@@ -10,6 +10,18 @@ import { DefaultEventsMap } from 'socket.io/dist/typed-events';
 app.use(cors());
 app.options('*', cors);
 
+app.get('/', (req, res) => {
+    res.json([{
+        name: 'Sergiu',
+        email: 'sergiu@gmail.com'
+    },
+    {
+        name: 'George',
+        email: 'george@gmail.com'
+    }
+]);
+});
+
 const server = http.createServer(app);
 const PORT = process.env.PORT || 8000;
 const io = new Server(server, {
